@@ -1,0 +1,118 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Пицца Марио",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/eae6b96d-f5a8-4bb8-8e6d-796de5c0f1ac.jpg?version=P801.27&webp&avif",
+      "price": 650
+    },
+    {
+      "id": 2,
+      "title": "Пицца Маргарита",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/82b220bd-6ad4-4e49-b667-7940c00baeb7.jpg?version=P801.27&webp&avif",
+      "price": 390
+    },
+    {
+      "id": 3,
+      "title": "Пицца Сырная",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/7d39a632-b8be-47c1-8277-abcf0066c556.jpg?version=P801.27&webp&avif",
+      "price": 520
+    },
+    {
+      "id": 4,
+      "title": "Пицца Фермерская",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/b7c086a0-4192-48c9-8db9-23e6be881778.jpg?version=P801.27&webp&avif",
+      "price": "540"
+    },
+    {
+      "id": 5,
+      "title": "Пицца \"Салями\"",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/840e80f7-b3ad-4b64-8e7d-abd0006fe591.jpg?version=P801.27&webp&avif",
+      "price": 580
+    },
+    {
+      "id": 6,
+      "title": "Пицца Диабло Барбекю острая",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/39b58742-2c1e-422f-9ac3-f442ec1539fc.jpg?version=P801.27&webp&avif",
+      "price": 580
+    },
+    {
+      "id": 7,
+      "title": "Пицца \"Карбонара\"",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/fad5f062-2d65-4fe2-b20e-abd000701b04.jpg?version=P801.27&webp&avif",
+      "price": 590
+    },
+    {
+      "id": 8,
+      "title": "Пиццабургер",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/adc2beea-e94f-4cbc-9809-aa6900926e64.jpg?version=P801.27&webp&avif",
+      "price": 690
+    },
+    {
+      "id": 9,
+      "title": "Пицца Лигурия",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/98bcb2be-b058-4631-9066-0b0fceb3d875.jpg?version=P801.27&webp&avif",
+      "price": 820
+    },
+    {
+      "id": 10,
+      "title": "Пицца Времена года 4 в 1",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/e6f8cecb-c98e-4743-bd0a-aa69009f0eef.jpg?version=P801.27&webp&avif",
+      "price": 580
+    },
+    {
+      "id": 11,
+      "title": "Пицца Фламинго",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/99706936-e52d-46fb-85e9-8f95ee490d3a.jpg?version=P801.27&webp&avif",
+      "price": 540
+    },
+    {
+      "id": 12,
+      "title": "Пицца Чикен Барбекю с сырными бортиками",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/1a800dbb-cbd5-4e7e-b382-a6fe0091df99.jpg?version=P801.27&webp&avif",
+      "price": 650
+    },
+    {
+      "id": 13,
+      "title": "Пицца Пизанская с сырными бортиками",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/47765296-a605-4691-8737-47d1446f86d0.jpg?version=P801.27&webp&avif",
+      "price": 590
+    },
+    {
+      "id": 14,
+      "title": "Пицца Пеперчини острая",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/51bfbf49-e91a-408f-864a-d280d2feafd7.jpg?version=P801.27&webp&avif",
+      "price": 580
+    },
+    {
+      "id": 15,
+      "title": "Пицца Мясная",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/2a919162-51b1-4659-a878-dcc534ccd994.jpg?version=P801.27&webp&avif",
+      "price": 650
+    },
+    {
+      "id": 16,
+      "title": "Пицца Гавайская",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/95edc8da-2b0d-484b-9244-9fda04d7883e.jpg?version=P801.27&webp&avif",
+      "price": 530
+    },
+    {
+      "id": 17,
+      "title": "Пицца Тропиканка",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/b5dd411b-35e2-4d4f-b91a-aa690095d591.jpg?version=P801.27&webp&avif",
+      "price": 650
+    },
+    {
+      "id": 18,
+      "title": "Пицца Пять Звезд",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/5add3a27-7885-407e-a9e8-5d7fc0439acc.jpg?version=P801.27&webp&avif",
+      "price": 750
+    },
+    {
+      "id": 19,
+      "title": "Пицца Донателло с сырными бортиками",
+      "image": "https://cdn.arora.pro/k/upload/scale/186/166/2/c66e6968-7d12-48b5-840a-28e57fd81ae2/size-2/a8467fab-cef9-41b4-a8f7-58501fd238f9.jpg?version=P801.27&webp&avif",
+      "price": 590
+    }
+  ]
+}
