@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <Layout>
     <div
       v-for="{ id, title, image } in products"
       :key="`product-${id}`"
@@ -7,17 +7,13 @@
       <span>{{ title }}</span>
       <img :src="image"/>
     </div>
-  </div>
+  </Layout>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-
-type Product = {
-  title: string,
-  image: string,
-  price: number,
-};
+import type { Product } from '~/models/product';
+import Layout from '~/components/Layout.vue';
 
 const products = ref<Product[]>();
 
