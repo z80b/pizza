@@ -1,6 +1,19 @@
+:root {
+  --defaultTextColor: #333;
+  --priceTextColor: #bd5d5d;
+  --bodyBorder: solid 1px #ffc6c6;
+  --buttonColor: #e3aeae;
+  --disabledButtonTextColor: #aaa; 
+  --buttonBorderColor: #e3aeaeaf;
+
+  --boxShadow: 3px 3px 10px 0px #00000033;
+}
+
 html, body {
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
+  font: 500 10px/16px 'sans-serif';
+  color: var(--defaultTextColor);
 }

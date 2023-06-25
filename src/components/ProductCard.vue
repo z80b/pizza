@@ -29,12 +29,12 @@ defineProps({
 <style module>
 .root {
   font-size: 13px;
-  border: solid 1px #4a2222;
+  border: solid 1px var(--priceTextColor);
   border-radius: 10px;
   overflow: hidden;
   padding: 10px;
   box-sizing: border-box;
-  box-shadow: 3px 3px 10px 0px #00000033;
+  box-shadow: var(--boxShadow);
   cursor: pointer;
   transition: ease 0.4s transform;
 }
@@ -50,7 +50,7 @@ defineProps({
 .price {
   font-size: 20px;
   font-weight: 700;
-  color: #4a2222;
+  color: var(--priceTextColor);
 }
 
 .ruble {
@@ -62,6 +62,7 @@ defineProps({
   width: 100%;
   height: auto;
   object-fit: contain;
+  border-radius: 10px;
 }
 
 .root:hover {
