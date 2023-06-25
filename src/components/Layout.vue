@@ -2,6 +2,7 @@
   <div :class="$style.root">
     <div :class="$style.header">
       <img :src="logoImage" :class="$style.logo"/>
+      <div>{{ title }}</div>
     </div>
     <div :class="$style.body">
       <slot></slot>
@@ -11,6 +12,13 @@
 
 <script setup lang="ts">
 import logoImage from '~/assets/logo.png';
+
+defineProps({
+  title: {
+    type: String,
+    default: '',
+  },
+});
 </script>
 
 <style module>

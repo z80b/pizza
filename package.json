@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "pinia": "^2.1.4",
-    "vue": "^3.2.47"
+    "swiper": "^9.4.1",
+    "vue": "^3.2.47",
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
+    "@vue/compiler-sfc": "^3.3.4",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
     "vue-tsc": "^1.4.2"
