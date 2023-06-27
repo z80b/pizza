@@ -1,11 +1,11 @@
 <template>
-  <div :class="$style.root">
+  <div v-if="product?.id" :class="$style.root">
     <div :class="$style.left">
-      <div :class="$style.name">{{ order?.product.title }}</div>
+      <div :class="$style.name">{{ product?.title }}</div>
       <div :class="$style.caption">Address</div>
     </div>
     <div :class="$style.right">
-      <div :class="$style.price">{{ order?.product.price }} руб</div>
+      <div :class="$style.price">{{ product?.price }} руб</div>
       <form :class="$style.form" @submit.prevent="updateOrder">
         <input
           type="text"
@@ -23,37 +23,84 @@
           v-model="flat"
           :class="$style.input"
         />
-        <button
+        <Button
           type="submit"
-          :class="$style.button"
           :disabled="!isFromFilled"
         >
           <span>Make order</span>
-        </button>
+        </Button>
       </form>
     </div>
+    <Modal v-if="isModalOpened" @close="isModalOpened = false">
+      <template #header>Message</template>
+      <template #default>
+        <div :class="$style.modalBody">
+          <div :class="$style.modalBodyHead">
+            <p>Order created</p>
+            <img :src="product?.image" :class="$style.image"/>
+          </div>
+          <div>
+            <dl :class="$style.field">
+              <dt :class="$style.fieldName">Name</dt>
+              <dd :class="$style.fieldValue">{{ product?.title }}</dd>
+            </dl>
+            <dl :class="$style.field">
+              <dt :class="$style.fieldName">Price</dt>
+              <dd :class="$style.fieldValue">{{ product?.price }}</dd>
+            </dl>
+            <dl
+              v-for="(item, field) in address"
+              :key="`addr-field-${field}`"
+              :class="$style.field"
+            >
+              <dt :class="$style.fieldName">{{ field }}</dt>
+              <dd :class="$style.fieldValue">{{ item }}</dd>
+            </dl>
+          </div>
+        </div>
+      </template>
+      <template #footer>
+        <Button @click="makeOrder">Submit</Button>
+      </template>
+    </Modal>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import { useOrderStore } from '~/stores/order';
+import Button from '~/components/Button.vue';
+import Modal from '~/components/Modal.vue';
+import type { Address } from '~/models/address';
 
-const { updateAddress, order } = useOrderStore();
+const router = useRouter();
+const { clearStorage, product, address } = useOrderStore();
 
-const street = ref(order?.address?.street);
-const house = ref(order?.address?.house);
-const flat = ref(order?.address?.flat);
+const street = ref(address?.street);
+const house = ref(address?.house);
+const flat = ref(address?.flat);
 const streetInputElement = ref<HTMLInputElement>();
+const isModalOpened = ref(false)
 
-const isFromFilled = computed(() => street.value && house.value && flat.value);
+const isFromFilled = computed(() => Boolean(
+  street.value &&
+  house.value &&
+  flat.value
+));
 
 const updateOrder = () => {
-  updateAddress({
-    street: street.value || '',
-    house: house.value || null,
-    flat: flat.value || null,
-  });
+  if (address) {
+    address.street = street.value || '';
+    address.house = house.value || null;
+    address.flat = flat.value || null;
+  }
+  isModalOpened.value = true;
+};
+
+const makeOrder = () => {
+  clearStorage();
+  router.push({ path: '/' });
 };
 
 onMounted(() => {
@@ -100,32 +147,35 @@ onMounted(() => {
   border-radius: 5px;
 }
 
-.button {
-  font-size: 1.5em;
+.field {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+.fieldName {
   font-weight: 700;
-  line-height: 4rem;
-  padding: 0 4rem;
-  background-color: var(--buttonColor);
-  border: solid 1px var(--buttonBorderColor);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: ease 0.3s background-color;
+  text-transform: capitalize;
 }
 
-.button:hover {
-  background-color: var(--buttonBorderColor);
-}
-
-.button:disabled,
-.button:disabled:hover {
-  background-color: var(--buttonBorderColor);
-  color: var(--disabledButtonTextColor);
+.image {
+  display: block;
+  width: 168px;
+  margin: auto;
 }
 
 @media screen and (min-width: 512px) {
   .root {
     display: flex;
     justify-content: center;
-  }  
+  }
+
+  .modalBody {
+    display: flex;
+  }
+
+  .modalBodyHead {
+    margin-right: 40px;
+  }
 }
 </style>
