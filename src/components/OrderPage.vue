@@ -1,11 +1,11 @@
 <template>
-  <div v-if="product?.id" :class="$style.root">
+  <div v-if="orderStore.product?.id" :class="$style.root">
     <div :class="$style.left">
-      <div :class="$style.name">{{ product?.title }}</div>
+      <div :class="$style.name">{{ orderStore.product?.title }}</div>
       <div :class="$style.caption">Address</div>
     </div>
     <div :class="$style.right">
-      <div :class="$style.price">{{ product?.price }} руб</div>
+      <div :class="$style.price">{{ orderStore.product?.price }} руб</div>
       <form :class="$style.form" @submit.prevent="updateOrder">
         <input
           type="text"
@@ -37,19 +37,19 @@
         <div :class="$style.modalBody">
           <div :class="$style.modalBodyHead">
             <p>Order created</p>
-            <img :src="product?.image" :class="$style.image"/>
+            <img :src="orderStore.product?.image" :class="$style.image"/>
           </div>
           <div>
             <dl :class="$style.field">
               <dt :class="$style.fieldName">Name</dt>
-              <dd :class="$style.fieldValue">{{ product?.title }}</dd>
+              <dd :class="$style.fieldValue">{{ orderStore.product?.title }}</dd>
             </dl>
             <dl :class="$style.field">
               <dt :class="$style.fieldName">Price</dt>
-              <dd :class="$style.fieldValue">{{ product?.price }}</dd>
+              <dd :class="$style.fieldValue">{{ orderStore.product?.price }}</dd>
             </dl>
             <dl
-              v-for="(item, field) in address"
+              v-for="(item, field) in orderStore.address"
               :key="`addr-field-${field}`"
               :class="$style.field"
             >
@@ -72,14 +72,13 @@ import { useRouter } from 'vue-router';
 import { useOrderStore } from '~/stores/order';
 import Button from '~/components/Button.vue';
 import Modal from '~/components/Modal.vue';
-import type { Address } from '~/models/address';
 
 const router = useRouter();
-const { clearStorage, product, address } = useOrderStore();
+const orderStore = useOrderStore();
 
-const street = ref(address?.street);
-const house = ref(address?.house);
-const flat = ref(address?.flat);
+const street = ref(orderStore.address?.street);
+const house = ref(orderStore.address?.house);
+const flat = ref(orderStore.address?.flat);
 const streetInputElement = ref<HTMLInputElement>();
 const isModalOpened = ref(false)
 
@@ -90,16 +89,16 @@ const isFromFilled = computed(() => Boolean(
 ));
 
 const updateOrder = () => {
-  if (address) {
-    address.street = street.value || '';
-    address.house = house.value || null;
-    address.flat = flat.value || null;
-  }
+  orderStore.updateAddress({
+    street: street.value || '',
+    house: house.value || null,
+    flat: flat.value || null,
+  })
   isModalOpened.value = true;
 };
 
 const makeOrder = () => {
-  clearStorage();
+  orderStore.clearStorage();
   router.push({ path: '/' });
 };
 
